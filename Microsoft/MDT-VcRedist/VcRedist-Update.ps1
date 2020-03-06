@@ -15,7 +15,7 @@ $VcList = Get-VcList
 
 Write-Verbose "Save all VcRedist setup files to $temp"
 If (!(Test-Path -Path $temp)) { New-Item -Path $temp -ItemType Directory -Force }
-Save-VcRedist -Path $temp -VcList $VcList
+Save-VcRedist -Path $temp -VcList $VcList -ForceWebRequest
 
 Write-Verbose "Update applications and bundle"
 Update-VcMdtApplication -VcList $VcList -Path $temp -MdtPath $MdtPath
