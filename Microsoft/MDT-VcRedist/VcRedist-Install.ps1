@@ -17,9 +17,9 @@ Write-Verbose "Save all VcRedist setup files to $temp"
 If (!(Test-Path -Path $temp)) { New-Item -Path $temp -ItemType Directory -Force }
 Save-VcRedist -Path $temp -VcList $VcList
 
-# Write-Verbose "Import applications and create bundle"
-# Import-VcMdtApplication -VcList $VcList -Path $temp -MdtPath $MdtPath
-# New-VcMdtBundle -MdtPath $MdtPath
+Write-Verbose "Import applications and create bundle"
+Import-VcMdtApplication -VcList $VcList -Path $temp -MdtPath $MdtPath
+New-VcMdtBundle -MdtPath $MdtPath
 
 Write-Verbose "Clean up $temp"
 Remove-Item $temp -Recurse -Force
