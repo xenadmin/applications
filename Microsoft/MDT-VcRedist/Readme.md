@@ -1,0 +1,2 @@
+## Blog post and instructions
+https://www.meinekleinefarm.net/integrate-vcredist-powershell-module-with-microsoft-deployment-toolkit-mdt
