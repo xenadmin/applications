@@ -17,7 +17,7 @@
 .LINK
     https://www.meinekleinefarm.net/download-and-install-latest-release-of-powershell/
 .LINK
-    GitHub
+    https://github.com/xenadmin/applications/tree/master/Microsoft/PowerShell/
 #>
 
 <#
