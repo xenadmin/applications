@@ -4,6 +4,7 @@
 .DESCRIPTION
     Evergreen Download & Setup Script for PowerShell Core Windows x86 MSI
     Created by Marco Hofmann in 2020
+    Blog: https://www.meinekleinefarm.net/
     Twitter: @xenadmin
 .EXAMPLE
     Start from inside the working directory, to preserve the Version history structure:
@@ -14,22 +15,20 @@
 .NOTES
     GitHub JSON API requires TLS 1.2 for Invoke-WebRequest.
     Ensure you uncomment the .NET command (line 40), if you haven't enabled TLS 1.2 in your Reference Image, yet.
+.NOTES
+    PowerShell Wrapper for MDT, Standalone and Chocolatey Installation - (C)2015 xenappblog.com 
+    Example 1: Start-Process "XenDesktopServerSetup.exe" -ArgumentList $unattendedArgs -Wait -Passthru
+    Example 2 Powershell: Start-Process powershell.exe -ExecutionPolicy bypass -file $Destination
+    Example 3 EXE (Always use ' '):
+    $UnattendedArgs='/qn'
+    (Start-Process "$PackageName.$InstallerType" $UnattendedArgs -Wait -Passthru).ExitCode
+    Example 4 MSI (Always use " "):
+    $UnattendedArgs = "/i $PackageName.$InstallerType ALLUSERS=1 /qn /liewa $LogApp"
+    (Start-Process msiexec.exe -ArgumentList $UnattendedArgs -Wait -Passthru).ExitCode
 .LINK
     https://www.meinekleinefarm.net/download-and-install-latest-release-of-powershell/
 .LINK
     https://github.com/xenadmin/applications/tree/master/Microsoft/PowerShell/
-#>
-
-<#
-PowerShell Wrapper for MDT, Standalone and Chocolatey Installation - (C)2015 xenappblog.com 
-Example 1: Start-Process "XenDesktopServerSetup.exe" -ArgumentList $unattendedArgs -Wait -Passthru
-Example 2 Powershell: Start-Process powershell.exe -ExecutionPolicy bypass -file $Destination
-Example 3 EXE (Always use ' '):
-$UnattendedArgs='/qn'
-(Start-Process "$PackageName.$InstallerType" $UnattendedArgs -Wait -Passthru).ExitCode
-Example 4 MSI (Always use " "):
-$UnattendedArgs = "/i $PackageName.$InstallerType ALLUSERS=1 /qn /liewa $LogApp"
-(Start-Process msiexec.exe -ArgumentList $UnattendedArgs -Wait -Passthru).ExitCode
 #>
 
 Clear-Host
