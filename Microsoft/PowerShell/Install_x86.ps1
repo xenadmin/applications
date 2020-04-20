@@ -14,7 +14,7 @@
     Will generate an MSI archive in the Working directory with past versions.
 .NOTES
     GitHub JSON API requires TLS 1.2 for Invoke-WebRequest.
-    Ensure you uncomment the .NET command (line 40), if you haven't enabled TLS 1.2 in your Reference Image, yet.
+    Ensure you uncomment the .NET command (line 39), if you haven't enabled TLS 1.2 in your Reference Image, yet.
 .NOTES
     PowerShell Wrapper for MDT, Standalone and Chocolatey Installation - (C)2015 xenappblog.com 
     Example 1: Start-Process "XenDesktopServerSetup.exe" -ArgumentList $unattendedArgs -Wait -Passthru
