@@ -39,7 +39,7 @@ $StartDTM = (Get-Date)
 # [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $arch = "x64"
-$github = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' | ConvertFrom-Json
+$github = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -UseBasicParsing | ConvertFrom-Json
 $url = $($github.assets | Where-Object -Property name -Like "*win-$arch.msi").browser_download_url
 
 $Vendor = "Microsoft"
@@ -63,7 +63,7 @@ Set-Location "$Version-$arch"
 
 Write-Verbose "Downloading $Vendor $Product $Version $arch" -Verbose
 If (!(Test-Path -Path $Source)) {
-    Invoke-WebRequest -Uri $url -OutFile $Source
+    Invoke-WebRequest -Uri $url -OutFile $Source -UseBasicParsing
 }
 Else {
         Write-Verbose "File exists. Skipping Download." -Verbose
