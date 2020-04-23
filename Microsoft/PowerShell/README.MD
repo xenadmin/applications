@@ -10,4 +10,5 @@ I created a PowerShell script to include the latest Version of PowerShell into y
 
 ## Changelog
 
+- 21 April 2020: Added "-UseBasicParsing" to "Invoke-WebRequest"
 - 20 April 2020: initial commit.
