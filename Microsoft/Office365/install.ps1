@@ -101,7 +101,7 @@ Set-Location $Version
 
 Write-Verbose "Downloading $Vendor $Product via ODT $Version" -Verbose
 if (!(Test-Path -Path .\Office\Data\v32.cab)) {
-    (Start-Process "Setup.exe" -ArgumentList $unattendedArgs2 -Wait -Passthru).ExitCode
+    (Start-Process "setupodt.exe" -ArgumentList $unattendedArgs2 -Wait -Passthru).ExitCode
 }
 else {
     Write-Verbose "File exists. Skipping Download." -Verbose
