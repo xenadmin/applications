@@ -69,7 +69,7 @@ $StartDTM = (Get-Date)
 
 $Vendor = "Microsoft"
 $Product = "Office 365 x32"
-$PackageName = "setup"
+$PackageName = "setupodt"
 $InstallerType = "exe"
 $LogPS = "${env:SystemRoot}" + "\Temp\$Vendor $Product $Version PS Wrapper.log"
 $Unattendedxml = 'RDSH.xml'
