@@ -69,7 +69,7 @@ $StartDTM = (Get-Date)
 
 $Vendor = "Microsoft"
 $Product = "Office 365 x32"
-$PackageName = "setupodt"
+$PackageName = "setup"
 $InstallerType = "exe"
 $LogPS = "${env:SystemRoot}" + "\Temp\$Vendor $Product $Version PS Wrapper.log"
 $Unattendedxml = 'RDSH.xml'
@@ -101,7 +101,7 @@ Set-Location $Version
 
 Write-Verbose "Downloading $Vendor $Product via ODT $Version" -Verbose
 if (!(Test-Path -Path .\Office\Data\v32.cab)) {
-    (Start-Process "setupodt.exe" -ArgumentList $unattendedArgs2 -Wait -Passthru).ExitCode
+    (Start-Process "setup.exe" -ArgumentList $unattendedArgs2 -Wait -Passthru).ExitCode
 }
 else {
     Write-Verbose "File exists. Skipping Download." -Verbose
